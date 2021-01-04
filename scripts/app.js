@@ -217,9 +217,10 @@ cocktailApp.displayDrinks = (recipes) => {
 // Function to configure the click behaviour on the recipe cards
 cocktailApp.configureClickBehaviourOnRecipes = function (recipes) {
   // Getting the users click on recipe
-  $('.recipe-card').on('click', '.recipe-card-title', function (e) {
+  $('.recipe-card').on('click', '.recipe-details', function (e) {
 
-    const $drinkTitle = $(this).text()
+    // Get rid of the whitespace at the beginning of the string
+    const $drinkTitle = $(this).text().trim()
 
     $('.modal').dialog('open')
     cocktailApp.getRecipeBySelection($drinkTitle, recipes)
