@@ -141,9 +141,10 @@ cocktailApp.searchOptions = () => {
     $('.search-mode-two').css('background-color', '#B56629')
     $('.search-mode-one').css('background-color', '#EFAC27')
     $('input')
-      .attr('placeholder', "Enter an ingredient")
+      .attr('placeholder', 'Enter an ingredient')
       .toggleClass('ingredient-search')
       .removeClass('name-search')
+    $('label').html('Enter an Ingredient')
   })
 
   $('.name-search').on('click', () => {
@@ -153,9 +154,9 @@ cocktailApp.searchOptions = () => {
       .attr('placeholder', "Enter a Cocktail")
       .toggleClass('name-search')
       .removeClass('ingredient-search')
+    $('label').html('Enter a Cocktail')
   })
 }
-
 
 // Function to configure the submit behaviour when the users enters input
 cocktailApp.onSubmit = function () {
