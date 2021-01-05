@@ -97,7 +97,7 @@ header {
   h2 {
     width: 100%;
     text-align: center;
-    color: $primary-text-color!important;
+    color: $primary-text-color;
   }
 }
 
@@ -193,7 +193,6 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
     h4 {
       @include secondary-font(calc(1.3rem + 1.3vw), 2.2, calc(0.25rem + 0.25vw))
     }
@@ -211,7 +210,6 @@ header {
     text-align: center;
     padding: 5px 10px;
     width: 100%;
-
     &:last-child {
       margin-left: 15px;
     }
@@ -241,7 +239,7 @@ input {
   border: none;
   padding: 10px;
   border-bottom: 1px solid $secondary-warning-color;
-  color: $primary-text-color!important;
+  color: $primary-text-color;
   background: transparent;
   width: 60%;
 }
@@ -363,7 +361,7 @@ footer {
   span,
   a {
     font-size: calc(0.7rem + 0.7vw);
-    color: $secondary-warning-color!important;
+    color: $secondary-warning-color;
   }
 }
 
