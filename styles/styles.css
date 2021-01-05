@@ -970,7 +970,7 @@ footer {
   background-color: #070808;
 }
 
-.footer-container {
+.footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -982,7 +982,7 @@ footer {
   padding: 50px 0px;
 }
 
-.footer-nav-list {
+.footer__nav__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -992,11 +992,11 @@ footer {
           flex-direction: column;
 }
 
-.footer-nav-list li {
+.footer__nav__list-item {
   margin: 5px;
 }
 
-.footer-nav-list a {
+.footer__nav__link {
   color: #EFAC27;
   font-size: calc(0.9rem + 0.9vw);
 }
@@ -1019,6 +1019,6 @@ footer {
   color: #B56629;
 }
 
-.juno-footer-link {
+.footer-copyright__juno-link {
   text-decoration: none;
 }
