@@ -51,7 +51,7 @@ h1 {
 }
 
 h2 {
-  @include secondary-font(clamp(3.1rem, 4vw, 4.2rem), 2.2, .5rem, 500);
+  @include secondary-font(clamp(2.8rem, 2vw, 4rem), 2.2, .5rem, 500);
   color: $primary-color;
 }
 
