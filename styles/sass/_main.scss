@@ -1,5 +1,3 @@
-
-
 /* About */
 .about {
   height: 500px;
@@ -15,7 +13,6 @@
   }
   &__text {
     max-width: 600px;
-    text-align: center;
   }
 }
   
@@ -109,33 +106,28 @@
     border: 1px solid red;
 }
   
-  input:focus,
-  button:focus,
-  .mobile-nav a:focus {
-    outline: 0.1px dotted $primary-color;
-  }
+input:focus,
+button:focus,
+.mobile-nav a:focus {
+  outline: 0.1px dotted $primary-color;
+}
   
-  input:active {
-    background-color: $warning-color;
-    opacity: 0.4;
-  }
-  
+input:active {
+  background-color: $warning-color;
+  opacity: 0.4;
+}
+
 /* Buttons */
 .btn {
-    @include primary-font(calc(1rem + 1vw), 1.6, calc(0.05rem + 0.05vw));
-    color: $primary-text-color;
-    background-color: $primary-color;
-    border: 1px solid $warning-color;
-    margin-left: 5px;
-    text-align: center;
-    padding: 10px 20px;
-    width: 40%;
-  }
-  
-  button:hover,
-  button:focus {
-    opacity: 0.7;
-  }
+  @include primary-font(calc(1rem + 1vw), 1.6, calc(0.05rem + 0.05vw));
+  color: $primary-text-color;
+  background-color: $primary-color;
+  border: 1px solid $warning-color;
+  margin-left: 5px;
+  text-align: center;
+  padding: 10px 20px;
+  width: 40%;
+}
   
 /* Dynamically Added Recipe Container */
 .recipes {
@@ -157,10 +149,6 @@
     font-size: 2.5rem;
     margin: 2rem;
     transition: 0.2s;
-    &:hover,
-    &:focus {
-    transform: scale(1.1);
-    }
   }
   &__details {
     background-color: $primary-background-color;

@@ -448,12 +448,12 @@ html {
 }
 
 body {
-  color: #FAFAFA;
   font-family: 'Raleway', 'Times', 'Arial', sans-serif;
   font-size: clamp(2.2rem, 1.6vw, 2.6rem);
   line-height: 2.2;
   letter-spacing: 0.15rem;
   font-weight: 400;
+  color: #FAFAFA;
 }
 
 .wrapper {
@@ -490,7 +490,7 @@ h1 {
 
 h2 {
   font-family: 'Ovo', 'Times', 'Arial', serif;
-  font-size: clamp(2.8rem, 2vw, 4rem);
+  font-size: clamp(2.8rem, 3vw, 4rem);
   letter-spacing: 0.5rem;
   line-height: 2.2;
   font-weight: 500;
@@ -498,12 +498,12 @@ h2 {
 }
 
 h3 {
-  color: #EFAC27;
   font-family: 'Ovo', 'Times', 'Arial', serif;
   font-size: clamp(2.8rem, 3vw, 3rem);
-  letter-spacing: 1rem;
+  letter-spacing: 0.2rem;
   line-height: 1.3;
   font-weight: 500;
+  color: #EFAC27;
 }
 
 h4 {
@@ -513,6 +513,11 @@ h4 {
   line-height: 2.2;
   font-weight: 500;
   color: #EFAC27;
+}
+
+button:hover,
+button:focus {
+  opacity: 0.7;
 }
 
 /* Header*/
@@ -615,7 +620,6 @@ header {
 
 .about__text {
   max-width: 600px;
-  text-align: center;
 }
 
 /* Main */
@@ -788,11 +792,6 @@ input:active {
   width: 40%;
 }
 
-button:hover,
-button:focus {
-  opacity: 0.7;
-}
-
 /* Dynamically Added Recipe Container */
 .recipes {
   display: -webkit-box;
@@ -830,11 +829,6 @@ button:focus {
   transition: 0.2s;
 }
 
-.recipes__title:hover, .recipes__title:focus {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
 .recipes__details {
   background-color: #070808;
   border-radius: 5%;
@@ -870,6 +864,26 @@ button:focus {
           align-items: center;
 }
 
+/* jQuery ui classes needed for the modal */
+.ui-widget-overlay {
+  background: #aaaaaa url("images/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
+  opacity: .3;
+  filter: Alpha(Opacity=30);
+}
+
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.ui-dialog {
+  z-index: 101;
+}
+
 .ui-button {
   font-family: 'Raleway', 'Times', 'Arial', sans-serif;
   font-size: calc(0.7rem + 0.7vw);
@@ -896,6 +910,7 @@ button:focus {
 
 .recipe__container {
   background: #070808;
+  padding: 10px 0 30px 0;
 }
 
 .recipe__content {
@@ -916,36 +931,17 @@ button:focus {
   padding: 25px 10px;
 }
 
-.recipe__name {
+.recipe__title {
   margin-bottom: 25px;
 }
 
 .recipe__img {
-  width: 65%;
+  width: 50%;
 }
 
 .recipe__instructions {
-  width: 80%;
-}
-
-/* jQuery ui classes needed for the modal */
-.ui-widget-overlay {
-  background: #aaaaaa url("images/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
-  opacity: .3;
-  filter: Alpha(Opacity=30);
-}
-
-.ui-widget-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-}
-
-.ui-dialog {
-  z-index: 101;
+  width: 60%;
+  margin: 0;
 }
 
 /* Footer */

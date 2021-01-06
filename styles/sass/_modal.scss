@@ -6,45 +6,6 @@
     align-items: center;
   }
 
-.ui-button {
-  @include primary-font(calc(0.7rem + 0.7vw), 1.9, calc(0.05rem + 0.05vw));
-  color: $primary-text-color;
-  background-color: $primary-color;
-  border: none;
-  padding: 10px 20px;
-  width: 20%;
-  text-transform: uppercase;
-}
-
-.recipe {
-  /* Outer and container are settings for the modal styles */
-  &__outer {
-    background: $secondary-background-color;
-  }
-  &__container {
-    background: #070808;
-  }
-  background: $primary-background-color;
-  /* Modal Content Blocks */
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 25px 10px;
-  }
-  &__name {
-    margin-bottom: 25px;
-  }
-  &__img {
-    width: 65%;
-  }
-  &__instructions {
-    width: 80%;
-  }
-}
-
 /* jQuery ui classes needed for the modal */
 .ui-widget-overlay {
   background: #aaaaaa url("images/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
@@ -65,3 +26,44 @@
   z-index: 101;
 }
   
+
+.ui-button {
+  @include primary-font(calc(0.7rem + 0.7vw), 1.9, calc(0.05rem + 0.05vw));
+  color: $primary-text-color;
+  background-color: $primary-color;
+  border: none;
+  padding: 10px 20px;
+  width: 20%;
+  text-transform: uppercase;
+}
+
+.recipe {
+  /* Outer and container are settings for the modal styles */
+  &__outer {
+    background: $secondary-background-color;
+  }
+  &__container {
+    background: #070808;
+    padding: 10px 0 30px 0;
+  }
+  background: $primary-background-color;
+  /* Modal Content Blocks */
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px 10px;
+  }
+  &__title {
+    margin-bottom: 25px;
+  }
+  &__img {
+    width: 50%;
+  }
+  &__instructions {
+    width: 60%;
+    margin: 0;
+  }
+}

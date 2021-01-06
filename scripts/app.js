@@ -2,9 +2,19 @@
 const cocktailApp = {}
 
 // API Call to get the recipes based on ingredient search
-cocktailApp.getRecipes = function (ingredient) {
+cocktailApp.getRecipes = function (searchTerm) {
+
+  // defining the variable to hold the url string
+  let url
+
+  if ($('input').hasClass('ingredient-search')) {
+    url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchTerm}`
+  } else {
+    url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`
+  }
+
   return $.ajax({
-    url: `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`,
+    url,
     method: 'GET',
     dataType: 'JSON',
   })
@@ -42,57 +52,18 @@ cocktailApp.getRecipes = function (ingredient) {
       cocktailApp.displayDrinks(recipesToDisplay)
     })
     .fail(() => {
-      $('.recipes').html(
-        '<p class="error-text"> No results found. Please enter different ingredient.</p>'
-      )
-      $('input').trigger('focus').addClass('invalid-input')
-    })
-}
-
-
-// API Call to get the drinks based on drink search
-cocktailApp.getDrinks = (searchTerm) => {
-  return $.ajax({
-    url: `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`,
-    method: 'GET',
-    dataType: 'JSON',
-  })
-    .then((res) => {
-
-      const drinksToDisplay = []
-
-      // pick random number of recipes to push back to drinksToDisplay function
-      for (let i = 0; i <= 30; i++) {
-
-        // Get random recipes from the results object
-        const randomIndex = Math.floor(Math.random() * res.drinks.length)
-
-        if (res.drinks.length === 0) {
-          break
-        }
-
-        const removedItems = res.drinks.splice(randomIndex, 1)
-
-        const itemToAdd = removedItems[0]
-
-        drinksToDisplay.push(itemToAdd)
+      if ($('input').hasClass('ingredient-search')) {
+        $('.recipes').html(
+          '<p class="error-text"> No results found. Please enter different ingredient.</p>'
+        )
+      } else {
+        $('.recipes').html(
+          '<p class="error-text"> No results found. Please enter different cocktail.</p>'
+        )
       }
-
-      drinksToDisplay.sort((a, b) => {
-        return a.strDrink < b.strDrink ? -1 : 1
-      })
-
-      cocktailApp.displayDrinks(drinksToDisplay)
-
-    })
-    .fail(() => {
-      $('.recipes').html(
-        '<p class="error-text">No results found. Please enter different cocktail.</p>'
-      )
       $('input').trigger('focus').addClass('invalid-input')
     })
 }
-
 
 // API call use to get the correct data and passed it to displayRecipes as an object
 cocktailApp.getRecipe = (drink) => {
@@ -172,10 +143,8 @@ cocktailApp.onSubmit = function () {
     if ($userInput !== '') {
       $('input').removeClass('invalid-input')
       // Call the API to return recipes to the user
-      if ($('input').hasClass('ingredient-search')) {
+      if ($('input').hasClass('ingredient-search') || $('input').hasClass('name-search')) {
         cocktailApp.getRecipes($userInput)
-      } else if ($('input').hasClass('name-search')) {
-        cocktailApp.getDrinks($userInput)
       } else {
         $('input')
           .attr('placeholder', "Please enter a valid input")
@@ -257,18 +226,18 @@ cocktailApp.displayRecipes = (recipe) => {
   })
 
   const $recipeContainerImage = $(`
-    <div class="recipe-media recipe__content">
-    <h3 class="recipe__name">${recipe.recipeName}</h3>
-    <div class="recipe__img"><img src="${recipe.recipeImage}" class="recipe-img" alt="Glass of delicious ${recipe.recipeName} beverage."></div>
+    <div class="recipe__content">
+    <h3 class="recipe__title">${recipe.recipeName}</h3>
+    <div class="recipe__img"><img src="${recipe.recipeImage}" class="recipe__img" alt="Glass of delicious ${recipe.recipeName} beverage."></div>
     </div>`)
 
-  const $recipeContainerIngredients = $(`<div class="recipe-ingredients recipe__content">
-  <h3 class="recipe__ingredients-title">Recipe Ingredients</h3>
+  const $recipeContainerIngredients = $(`<div class="recipe__content">
+  <h3 class="recipe__title">Recipe Ingredients</h3>
   </div>`)
 
   const $recipeContainerInstructions = $(`
     <div class="recipe__content">
-    <h3 class="recipe__instructions-title">Instructions</h3>
+    <h3 class="recipe__title">Instructions</h3>
     <p class="recipe__instructions">${recipe.recipeInstructions}</p></div>
     `)
 
