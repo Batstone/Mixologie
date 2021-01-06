@@ -9,18 +9,16 @@ footer {
     justify-content: space-around;
     align-items: center;
     padding: 50px 0px;
-    &__nav {
-      &__list {
-        display: flex;
-        flex-direction: column;
-      }
-      &__list-item {
-        margin: 5px;
-      }
-      &__link {
-        color: $primary-color;
-        font-size: calc(0.9rem + 0.9vw);
-      }
+    &__nav-list {
+      display: flex;
+      flex-direction: column;
+    }
+    &__nav-list-item {
+      margin: 5px;
+    }
+    &__nav-link {
+      color: $primary-color;
+      font-size: calc(0.9rem + 0.9vw);
     }
   }
    

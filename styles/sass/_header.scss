@@ -15,22 +15,20 @@ header {
   &__mobile-nav {
     display: none;
     cursor: pointer;
-    i {
-      color: $primary-color;
-      font-size: calc(1.7rem + 1.7vw);
-    }
   }
-  &__nav {
-      li:last-child {
-      margin-left: 50px;
-    }
-    &__list {
-      display: flex;
-      justify-content: space-evenly;
-    }
-    &__link {
-      color: $primary-color;
-    }
+  &__mobile-icon {
+    color: $primary-color;
+    font-size: calc(1.7rem + 1.7vw);
+  }
+  &__nav-list {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  &__nav-link {
+    color: $primary-color;
+  }
+  &__last-link {
+    margin-left: 50px;
   }
 }
 
@@ -40,7 +38,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  h2 {
+  &__text {
     width: 100%;
     text-align: center;
     color: $primary-text-color;

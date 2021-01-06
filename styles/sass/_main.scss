@@ -1,129 +1,99 @@
 
 
-  /* About */
-  .about {
-    height: 500px;
-    display: flex;
-    align-items: center;
-    background-color: $primary-background-color;
-    color: $primary-text-color;
-  }
-  
-  .about-content {
+/* About */
+.about {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  background-color: $primary-background-color;
+  color: $primary-text-color;
+  &__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
-    p {
-      max-width: 600px;
-      text-align: center;
-    }
   }
+  &__text {
+    max-width: 600px;
+    text-align: center;
+  }
+}
   
-  
-
 /* Main */
 .main {
-    // https://css-tricks.com/couple-takes-sticky-footer/
-    min-height: calc(100vh - 180px); // for sticky footer
-    display: flex;
-    align-items: center;
-    background-color: $secondary-background-color;
-  }
-  
-  .main-title {
+  // https://css-tricks.com/couple-takes-sticky-footer/
+  min-height: calc(100vh - 180px); // for sticky footer
+  display: flex;
+  align-items: center;
+  background-color: $secondary-background-color;
+  &__title {
     display: flex;
     justify-content: center;
     margin-bottom: 4rem;
     text-align: center;
   }
-  
-  .main-container {
+  &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  
-  .main-img,
-  .main-search {
-    padding: 10px;
+  &__img {
+    width: 50%;
   }
-  
-  .main-search {
+  &__search {
     margin-left: calc(4rem + 4vw);
     width: 50%;
   }
-  
-  .main-content {
+  &__content {
     margin-bottom: 20px;
-  
-    p {
-      text-align: center;
-    }
-  
-    .main-content-steps {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
   }
-  
-
-
-/* Main Image */
-.main-img {
-    width: 50%;
+  &__subtitle {
+    text-align: center;
   }
-  
+  &__content-text {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
   /* Search Buttons */
-  .search-buttons-heading {
+  &__buttons-heading {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-      h4 {
-        @include secondary-font(calc(1.3rem + 1.3vw), 2.2, calc(0.25rem + 0.25vw))
-      }
   }
-  
-.search-buttons {
+  &__search-title {
+    @include secondary-font(calc(1.3rem + 1.3vw), 2.2, calc(0.25rem + 0.25vw))
+  }
+  &__buttons {
     display: flex;
     justify-content: center;
     margin-bottom: 75px;
-  
-    button {
-      @include primary-font(calc(.7rem + .7vw), 1.6, calc(0.05rem + 0.05vw));
-      color: $primary-text-color;
-      border: 1px solid $warning-color;
-      text-align: center;
-      padding: 5px 10px;
-      width: 100%;
-      &:last-child {
-        margin-left: 15px;
-      }
-    }
   }
-  
-  .search-mode-one {
-    background-color: $primary-color;
+  &__button {
+    @include primary-font(calc(.7rem + .7vw), 1.6, calc(0.05rem + 0.05vw));
+    color: $primary-text-color;
+    border: 1px solid $warning-color;
+    text-align: center;
+    padding: 5px 10px;
+    width: 100%;
   }
-  
-  .search-mode-two {
-    background-color: $primary-color;
+  &__last-button {
+    margin-left: 15px;
   }
+}
   
-  
+.search-mode-one {
+  background-color: $primary-color;
+}
+
+.search-mode-two {
+  background-color: $primary-color;
+}
 
 /* Form */
-.invalid-input {
-    border: 1px solid red;
-  }
-  
-  form {
-    display: flex;
-  }
-  
-  input {
+.form {
+  display: flex;
+  &__input {
     @include primary-font(calc(0.8rem + 0.8vw), 1.6, calc(0.05rem + 0.05vw));
     outline: none;
     border: none;
@@ -133,6 +103,11 @@
     background: transparent;
     width: 60%;
   }
+}
+
+.invalid-input {
+    border: 1px solid red;
+}
   
   input:focus,
   button:focus,
@@ -145,7 +120,6 @@
     opacity: 0.4;
   }
   
-
 /* Buttons */
 .btn {
     @include primary-font(calc(1rem + 1vw), 1.6, calc(0.05rem + 0.05vw));
@@ -164,25 +138,22 @@
   }
   
 /* Dynamically Added Recipe Container */
-.recipe-container {
+.recipes {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   padding: 100px 0;
-
-  img {
+  &__list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &__img {
     width: 90%;
     margin-bottom: 30px;
   }
-
-  .drink-title {
-    height: 175px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  h3 {
+  &__title {
     font-size: 2.5rem;
     margin: 2rem;
     transition: 0.2s;
@@ -191,15 +162,7 @@
     transform: scale(1.1);
     }
   }
-
-  ul {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .recipe-details {
+  &__details {
     background-color: $primary-background-color;
     border-radius: 5%;
     text-align: center;

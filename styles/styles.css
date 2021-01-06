@@ -542,16 +542,12 @@ header {
   cursor: pointer;
 }
 
-.header__mobile-nav i {
+.header__mobile-icon {
   color: #EFAC27;
   font-size: calc(1.7rem + 1.7vw);
 }
 
-.header__nav li:last-child {
-  margin-left: 50px;
-}
-
-.header__nav__list {
+.header__nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -560,8 +556,12 @@ header {
           justify-content: space-evenly;
 }
 
-.header__nav__link {
+.header__nav-link {
   color: #EFAC27;
+}
+
+.header__last-link {
+  margin-left: 50px;
 }
 
 .header-description {
@@ -578,7 +578,7 @@ header {
           align-items: center;
 }
 
-.header-description h2 {
+.header-description__text {
   width: 100%;
   text-align: center;
   color: #FAFAFA;
@@ -597,7 +597,7 @@ header {
   color: #FAFAFA;
 }
 
-.about-content {
+.about__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -613,7 +613,7 @@ header {
           align-items: center;
 }
 
-.about-content p {
+.about__text {
   max-width: 600px;
   text-align: center;
 }
@@ -628,9 +628,10 @@ header {
       -ms-flex-align: center;
           align-items: center;
   background-color: #262119;
+  /* Search Buttons */
 }
 
-.main-title {
+.main__title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -641,7 +642,7 @@ header {
   text-align: center;
 }
 
-.main-container {
+.main__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -653,36 +654,29 @@ header {
           align-items: center;
 }
 
-.main-img,
-.main-search {
-  padding: 10px;
+.main__img {
+  width: 50%;
 }
 
-.main-search {
+.main__search {
   margin-left: calc(4rem + 4vw);
   width: 50%;
 }
 
-.main-content {
+.main__content {
   margin-bottom: 20px;
 }
 
-.main-content p {
+.main__subtitle {
   text-align: center;
 }
 
-.main-content .main-content-steps {
+.main__content-text {
   list-style-type: disc;
   margin-left: 20px;
 }
 
-/* Main Image */
-.main-img {
-  width: 50%;
-}
-
-/* Search Buttons */
-.search-buttons-heading {
+.main__buttons-heading {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -698,7 +692,7 @@ header {
           align-items: center;
 }
 
-.search-buttons-heading h4 {
+.main__search-title {
   font-family: 'Ovo', 'Times', 'Arial', serif;
   font-size: calc(1.3rem + 1.3vw);
   letter-spacing: calc(0.25rem + 0.25vw);
@@ -706,7 +700,7 @@ header {
   font-weight: 400;
 }
 
-.search-buttons {
+.main__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -716,7 +710,7 @@ header {
   margin-bottom: 75px;
 }
 
-.search-buttons button {
+.main__button {
   font-family: 'Raleway', 'Times', 'Arial', sans-serif;
   font-size: calc(.7rem + .7vw);
   line-height: 1.6;
@@ -729,7 +723,7 @@ header {
   width: 100%;
 }
 
-.search-buttons button:last-child {
+.main__last-button {
   margin-left: 15px;
 }
 
@@ -742,17 +736,13 @@ header {
 }
 
 /* Form */
-.invalid-input {
-  border: 1px solid red;
-}
-
-form {
+.form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-input {
+.form__input {
   font-family: 'Raleway', 'Times', 'Arial', sans-serif;
   font-size: calc(0.8rem + 0.8vw);
   line-height: 1.6;
@@ -765,6 +755,10 @@ input {
   color: #FAFAFA;
   background: transparent;
   width: 60%;
+}
+
+.invalid-input {
+  border: 1px solid red;
 }
 
 input:focus,
@@ -800,7 +794,7 @@ button:focus {
 }
 
 /* Dynamically Added Recipe Container */
-.recipe-container {
+.recipes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -812,37 +806,7 @@ button:focus {
   padding: 100px 0;
 }
 
-.recipe-container img {
-  width: 90%;
-  margin-bottom: 30px;
-}
-
-.recipe-container .drink-title {
-  height: 175px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.recipe-container h3 {
-  font-size: 2.5rem;
-  margin: 2rem;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.recipe-container h3:hover, .recipe-container h3:focus {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-.recipe-container ul {
+.recipes__list {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -854,7 +818,24 @@ button:focus {
       flex-wrap: wrap;
 }
 
-.recipe-container .recipe-details {
+.recipes__img {
+  width: 90%;
+  margin-bottom: 30px;
+}
+
+.recipes__title {
+  font-size: 2.5rem;
+  margin: 2rem;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.recipes__title:hover, .recipes__title:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.recipes__details {
   background-color: #070808;
   border-radius: 5%;
   text-align: center;
@@ -889,14 +870,6 @@ button:focus {
           align-items: center;
 }
 
-.outer-modal {
-  background: #262119;
-}
-
-.modal-content {
-  background: #070808;
-}
-
 .ui-button {
   font-family: 'Raleway', 'Times', 'Arial', sans-serif;
   font-size: calc(0.7rem + 0.7vw);
@@ -911,10 +884,21 @@ button:focus {
   text-transform: uppercase;
 }
 
-/* Modal Content Blocks */
-.recipe-container-media,
-.recipe-container-ingredients,
-.recipe-container-instructions {
+.recipe {
+  /* Outer and container are settings for the modal styles */
+  background: #070808;
+  /* Modal Content Blocks */
+}
+
+.recipe__outer {
+  background: #262119;
+}
+
+.recipe__container {
+  background: #070808;
+}
+
+.recipe__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -932,15 +916,15 @@ button:focus {
   padding: 25px 10px;
 }
 
-.recipe-name {
+.recipe__name {
   margin-bottom: 25px;
 }
 
-.recipe-img-container {
+.recipe__img {
   width: 65%;
 }
 
-.recipe-container-instructions p {
+.recipe__instructions {
   width: 80%;
 }
 
@@ -982,7 +966,7 @@ footer {
   padding: 50px 0px;
 }
 
-.footer__nav__list {
+.footer__nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -992,11 +976,11 @@ footer {
           flex-direction: column;
 }
 
-.footer__nav__list-item {
+.footer__nav-list-item {
   margin: 5px;
 }
 
-.footer__nav__link {
+.footer__nav-link {
   color: #EFAC27;
   font-size: calc(0.9rem + 0.9vw);
 }

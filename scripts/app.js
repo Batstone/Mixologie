@@ -42,7 +42,7 @@ cocktailApp.getRecipes = function (ingredient) {
       cocktailApp.displayDrinks(recipesToDisplay)
     })
     .fail(() => {
-      $('.recipe-container').html(
+      $('.recipes').html(
         '<p class="error-text"> No results found. Please enter different ingredient.</p>'
       )
       $('input').trigger('focus').addClass('invalid-input')
@@ -86,7 +86,7 @@ cocktailApp.getDrinks = (searchTerm) => {
 
     })
     .fail(() => {
-      $('.recipe-container').html(
+      $('.recipes').html(
         '<p class="error-text">No results found. Please enter different cocktail.</p>'
       )
       $('input').trigger('focus').addClass('invalid-input')
@@ -164,7 +164,7 @@ cocktailApp.onSubmit = function () {
     e.preventDefault()
 
     // Clearing the recipe-container div
-    $('.recipe-container').html('')
+    $('.recipes').html('')
 
     // Store user input in a variable
     const $userInput = $('input').val().trim()
@@ -191,25 +191,23 @@ cocktailApp.onSubmit = function () {
 // Function for displaying drinks on the DOM
 cocktailApp.displayDrinks = (recipes) => {
 
-  const $drinksList = $('<ul>')
+  const $drinksList = $('<ul class="recipes__list">')
   // Creating an li element for each recipe element in the array
   $.each(recipes, (index, recipe) => {
 
     // Appending each li to the ul
     $drinksList.append(`
-      <li class="recipe-card">
-        <button class="recipe-details">
-        <div class="drink-title">
-        <h3 class="recipe-card-title">${recipe.strDrink}</h3>
-        </div>
-        <img src="${recipe.strDrinkThumb}"
+      <li class="recipes__card">
+        <button class="recipes__details">
+        <h3 class="recipes__title">${recipe.strDrink}</h3>
+        <img class="recipes__img" src="${recipe.strDrinkThumb}"
           alt="Glass of delicious ${recipe.strDrink} beverage.">
         </button>
       </li>
     `)
   })
 
-  $('.recipe-container').append($drinksList)
+  $('.recipes').append($drinksList)
 
   cocktailApp.configureClickBehaviourOnRecipes(recipes)
 }
@@ -218,12 +216,12 @@ cocktailApp.displayDrinks = (recipes) => {
 // Function to configure the click behaviour on the recipe cards
 cocktailApp.configureClickBehaviourOnRecipes = function (recipes) {
   // Getting the users click on recipe
-  $('.recipe-card').on('click', '.recipe-details', function (e) {
+  $('.recipes__card').on('click', '.recipes__details', function (e) {
 
     // Get rid of the whitespace at the beginning of the string
     const $drinkTitle = $(this).text().trim()
 
-    $('.modal').dialog('open')
+    $('.recipe').dialog('open')
     cocktailApp.getRecipeBySelection($drinkTitle, recipes)
 
   })
@@ -247,54 +245,53 @@ cocktailApp.getRecipeBySelection = (drinkTitle, recipes) => {
 // Function for displaying recipe on the DOM
 cocktailApp.displayRecipes = (recipe) => {
   // clear the modal content
-  $('.modal').html("")
+  $('.recipe').html("")
 
   // Creating the UL element
-  const $recipeContainer = $('<div class="modal-content">')
+  const $recipeContainer = $('<div class="recipe__container">')
 
-  const $ingredientsList = $('<ul class="ingredient-list">')
+  const $ingredientsList = $('<ul class="recipe__ingredients">')
 
   recipe.ingredients.forEach((ingredient, index) => {
     $ingredientsList.append(`<li>${ingredient}: ${recipe.ingredientsUnits[index]}</li>`)
   })
 
   const $recipeContainerImage = $(`
-    <div class="recipe-container-media">
-    <h3 class="recipe-name">${recipe.recipeName}</h3>
-    <div class="recipe-img-container"><img src="${recipe.recipeImage}" class="recipe-img" alt="Glass of delicious ${recipe.recipeName} beverage."></div>
+    <div class="recipe-media recipe__content">
+    <h3 class="recipe__name">${recipe.recipeName}</h3>
+    <div class="recipe__img"><img src="${recipe.recipeImage}" class="recipe-img" alt="Glass of delicious ${recipe.recipeName} beverage."></div>
     </div>`)
 
-  const $recipeContainerIngredients = $(`<div class="recipe-container-ingredients">
-  <h3 class="recipe-ingredients-title">Recipe Ingredients</h3>
+  const $recipeContainerIngredients = $(`<div class="recipe-ingredients recipe__content">
+  <h3 class="recipe__ingredients-title">Recipe Ingredients</h3>
   </div>`)
 
-
   const $recipeContainerInstructions = $(`
-    <div class="recipe-container-instructions">
-    <h3 class="instructions=title">Instructions</h3>
-    <p class="recipe-instructions">${recipe.recipeInstructions}</p></div>
+    <div class="recipe__content">
+    <h3 class="recipe__instructions-title">Instructions</h3>
+    <p class="recipe__instructions">${recipe.recipeInstructions}</p></div>
     `)
 
   $($recipeContainerIngredients).append($ingredientsList)
 
   $recipeContainer.append($recipeContainerImage, $recipeContainerIngredients, $recipeContainerInstructions)
 
-  $('.modal').append($recipeContainer)
+  $('.recipe').append($recipeContainer)
 
 }
 
 // Function for displaying the modal
 cocktailApp.displayModal = () => {
   // Selecting the modal from the DOM
-  $('.modal').dialog({
+  $('.recipe').dialog({
     autoOpen: false,
     modal: true,
     width: '60%',
     maxWidth: 800,
     height: '60%',
     classes: {
-      'ui-dialog': 'outer-modal',
-      'ui-dialog-content': 'modal-content'
+      'ui-dialog': 'recipe__outer',
+      'ui-dialog-content': 'recipe__container'
     },
     resizable: false,
   })

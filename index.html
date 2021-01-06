@@ -22,19 +22,20 @@
       <div class="header">
         <div class="header__mobile-container">
           <h1>Mixologié.</h1>
-          <a class="header__mobile-nav" tabindex="0"><i class="fas fa-bars" title="Hamburger Menu"></i>
+          <a class="header__mobile-nav" tabindex="0"><i class="fas fa-bars header__mobile-icon"
+              title="Hamburger Menu"></i>
             <span class="sr-only">“Hamburger icon to trigger mobile navigation menu</span></a>
         </div>
         <nav class="header__nav js-nav">
-          <ul class="header__nav__list">
-            <li><a class="header__nav__link" href="#about">About</a></li>
-            <li><a class="header__nav__link" href="#main">Cocktail Recipes</a></li>
+          <ul class="header__nav-list">
+            <li><a class="header__nav-link" href="#about">About</a></li>
+            <li><a class="header__nav-link header__last-link" href="#main">Cocktail Recipes</a></li>
           </ul>
         </nav>
       </div>
 
       <div class="header-description">
-        <h2>Everything You Need to Craft The Perfect Cocktail.</h2>
+        <h2 class="header-description__text">Everything You Need to Craft The Perfect Cocktail.</h2>
       </div>
       <!-- Header Wrapper ENDS -->
     </div>
@@ -43,9 +44,9 @@
   <main>
     <section id="about" class="about">
       <div class="wrapper">
-        <div class="about-content">
+        <div class="about__content">
           <h2>About Us.</h2>
-          <p>
+          <p class="about__text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Pariatur iure nulla fugiat omnis suscipit
             recusandae rem reprehenderit vero dolorem placeat.
@@ -57,18 +58,18 @@
 
     <section id="main" class="main">
       <div class="wrapper">
-        <div class="main-title">
+        <div class="main__title">
           <h2>Cocktail Recipes.</h2>
         </div>
-        <div class="main-container">
-          <div class="main-img">
+        <div class="main__container">
+          <div class="main__img">
             <img src="./assets/recipe-section-one.jpg" alt="Two glasses filled with rum cocktail,
               garnished with mint and fresh lime.">
           </div>
-          <div class="main-search">
-            <div class="main-content">
-              <p>Find the perfect cocktail:</p>
-              <ul class="main-content-steps">
+          <div class="main__search">
+            <div class="main__content">
+              <p class="main__subtitle">Find the perfect cocktail:</p>
+              <ul class="main__content-text">
                 <li>Select a search option before entering a query in the input field.</li>
                 <li>Get a curated list of recipes.</li>
                 <li>Click on one of the recipe cards to see more details.</li>
@@ -77,28 +78,28 @@
               </ul>
             </div>
 
-            <div class="search-buttons-heading">
-              <h4>Search By</h4>
-              <div class="search-buttons">
-                <button class="name-search search-mode-one">Cocktail Name</button>
-                <button class="ingredient-search search-mode-two">Ingredient</button>
+            <div class="main__buttons-heading">
+              <h4 class="main__search-title">Search By</h4>
+              <div class="main__buttons">
+                <button class="main__button name-search search-mode-one">Cocktail Name</button>
+                <button class="main__button main__last-button ingredient-search search-mode-two">Ingredient</button>
               </div>
             </div>
 
-            <form>
+            <form class="form">
               <label for="input" class="sr-only" id="label">Ingredient</label>
-              <input id="input" type="text" placeholder="Select a search option">
-              <button id="submit-btn" type="submit" class="btn">Search</button>
+              <input class="form__input" id="input" type="text" placeholder="Select a search option">
+              <button id="submit-btn" type="submit" class="form__button">Search</button>
             </form>
             <!-- Main Search Div ENDS -->
           </div>
           <!-- Main Container ENDS  -->
         </div>
 
-        <div class="modal">
+        <div class="recipe">
           <!-- Dynamically add drink recipe in the modal -->
         </div>
-        <div class="recipe-container">
+        <div class="recipes">
           <!-- Dynamically add items here -->
         </div>
         <!-- Main Content Wrapper ENDS -->
@@ -113,9 +114,10 @@
           </div>
           <div class="footer__nav">
             <nav>
-              <ul class="footer-nav__list">
-                <li class="footer-nav__list-item"><a class="footer__nav__link" href="#about">About</a></li>
-                <li class="footer-nav__list-item"><a class="footer__nav__link" href="#main">Cocktail Recipes</a></li>
+              <ul class="footer__nav-list">
+                <li class="footer__nav-list-item"><a class="footer__nav-link" href="#about">About</a></li>
+                <li class="footer__nav-list-item"><a class="footer__nav-link" href="#main">Cocktail Recipes</a>
+                </li>
               </ul>
             </nav>
           </div>
