@@ -251,11 +251,22 @@ cocktailApp.displayRecipes = (recipe) => {
 
 // Function for displaying the modal
 cocktailApp.displayModal = () => {
+
+  let width = '40%'
+
+  if (($(window).width() <= 900) && ($(window).width() >= 651)) {
+    width = '60%';
+  } else if (($(window).width() <= 650) && ($(window).width() >= 451)) {
+    width = '80%';
+  } else if (($(window).width() <= 450) && ($(window).width() >= 200)) {
+    width = '100%';
+  }
+
   // Selecting the modal from the DOM
   $('.recipe').dialog({
     autoOpen: false,
     modal: true,
-    width: '60%',
+    width,
     maxWidth: 800,
     height: '60%',
     classes: {

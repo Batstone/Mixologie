@@ -26,7 +26,6 @@
   z-index: 101;
 }
   
-
 .ui-button {
   @include primary-font(calc(0.7rem + 0.7vw), 1.9, calc(0.05rem + 0.05vw));
   color: $primary-text-color;
@@ -60,7 +59,7 @@
     margin-bottom: 25px;
   }
   &__img {
-    width: 50%;
+    width: 70%;
   }
   &__instructions {
     width: 60%;

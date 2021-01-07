@@ -70,26 +70,26 @@
             <div class="main__content">
               <p class="main__subtitle">Find the perfect cocktail:</p>
               <ul class="main__content-text">
-                <li>Select a search option before entering a query in the input field.</li>
-                <li>Get a curated list of recipes.</li>
-                <li>Click on one of the recipe cards to see more details.</li>
-                <li>Craft the perfect cocktail.</li>
-                <li>Enjoy!</li>
+                <li class="main__list-item">Select a search option before entering a query in the input field.</li>
+                <li class="main__list-item">Get a curated list of recipes.</li>
+                <li class="main__list-item">Click on one of the recipe cards to see more details.</li>
+                <li class="main__list-item">Craft the perfect cocktail.</li>
+                <li class="main__list-item">Enjoy!</li>
               </ul>
             </div>
 
             <div class="main__buttons-heading">
               <h4 class="main__search-title">Search By</h4>
               <div class="main__buttons">
-                <button class="main__button name-search search-mode-one">Cocktail Name</button>
-                <button class="main__button main__last-button ingredient-search search-mode-two">Ingredient</button>
+                <button class="main__button btn name-search search-mode-one">Cocktail Name</button>
+                <button class="main__button btn main__last-button ingredient-search search-mode-two">Ingredient</button>
               </div>
             </div>
 
             <form class="form">
               <label for="input" class="sr-only" id="label">Ingredient</label>
               <input class="form__input" id="input" type="text" placeholder="Select a search option">
-              <button class="btn" id="submit-btn" type="submit" class="form__button">Search</button>
+              <button class="form__button btn" id="submit-btn" type="submit" class="form__button">Search</button>
             </form>
             <!-- Main Search Div ENDS -->
           </div>
@@ -109,7 +109,7 @@
     <footer>
       <div class="wrapper">
         <div class="footer">
-          <div class="footer-logo">
+          <div class="footer__logo">
             <h4>Mixologié.</h4>
           </div>
           <div class="footer__nav">
@@ -122,11 +122,9 @@
             </nav>
           </div>
         </div>
-        <div class="footer-copyright">
-          <span>&copy; 2020 Adam Batstone & Karmen Salim
-            <a href="https://junocollege.com/" class="footer-copyright__juno-link">
-              | Created at Juno College</a>
-          </span>
+        <div class="footer__copyright">
+          <p>&copy; 2020 <a class="footer__link" href="https://www.adambatstone.dev">Adam Batstone</a> & Karmen Salim
+          </p>
         </div>
         <!-- Footer Wrapper ENDS -->
       </div>
