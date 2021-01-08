@@ -72,6 +72,11 @@
 
 @media (max-width: 600px) {
 
+  /* HEADER*/
+  header {
+  background-attachment: scroll;
+}
+
   /* RECIPE MODAL */
   .recipe {
     &__img {
@@ -135,26 +140,6 @@
     }
     &__nav-list {
       align-items: center;
-    }
-  }
-}
-
-
-@media (max-width: 360px) {
-  /* Header */
-
-  .modal-content {
-    h3 {
-      font-size: 1.2rem;
-    }
-    p, li {
-      font-size: 1rem;
-    }
-  }
-
-  .mobile-nav {
-    i {
-      font-size: 1.6rem;
     }
   }
 }

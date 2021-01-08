@@ -252,7 +252,7 @@ cocktailApp.displayRecipes = (recipe) => {
 // Function for displaying the modal
 cocktailApp.displayModal = () => {
 
-  let width = '40%'
+  let width = '50%'
 
   if (($(window).width() <= 900) && ($(window).width() >= 651)) {
     width = '60%';
