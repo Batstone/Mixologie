@@ -1086,6 +1086,10 @@ footer {
 }
 
 @media (max-width: 600px) {
+  /* HEADER*/
+  header {
+    background-attachment: scroll;
+  }
   /* RECIPE MODAL */
   .recipe__img {
     width: 100%;
