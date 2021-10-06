@@ -77,6 +77,14 @@
   background-attachment: scroll;
 }
 
+.header {
+  &__logo-container {
+    img {
+      width: 80%;
+    }
+  }
+}
+
   /* RECIPE MODAL */
   .recipe {
     &__img {
@@ -85,6 +93,19 @@
     &__instructions {
       width: 80%;
       margin: 0;
+    }
+  };
+
+  
+  /* FOOTER */
+  .footer {
+    flex-direction: column;
+    &__logo {
+      order: 2;
+      margin-top: 3rem;
+    }
+    &__nav-list {
+      align-items: center;
     }
   }
 }
@@ -128,18 +149,6 @@
   .recipe {
     &__content {
       padding: 25px 0;
-    }
-  }
-
-  /* FOOTER */
-  .footer {
-    flex-direction: column;
-    &__logo {
-      order: 2;
-      margin-top: 3rem;
-    }
-    &__nav-list {
-      align-items: center;
     }
   }
 }

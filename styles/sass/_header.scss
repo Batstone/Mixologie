@@ -13,6 +13,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  &__logo-container {
+    img {
+      padding-top: 20px;
+      width: 350px;
+    }
+  }
   &__mobile-nav {
     display: none;
     cursor: pointer;
